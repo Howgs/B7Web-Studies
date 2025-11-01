@@ -38,3 +38,23 @@ class Wizard extends Character {
         this.maxLife = this.life;
     }
 }
+
+class LitleMonster extends Character {
+    constructor () {
+        super('Necrófago');
+        this.life = 40;
+        this.attack = 5;
+        this.defense = 4;
+        this.maxLife = this.life;
+    }
+}
+
+class BigMonster extends Character {
+    constructor () {
+        super('Ogro');
+        this.life = 120;
+        this.attack = 15;
+        this.defense = 7;
+        this.maxLife = this.life;
+    }
+}
