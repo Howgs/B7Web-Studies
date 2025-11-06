@@ -39,7 +39,7 @@ class Wizard extends Character {
     }
 }
 
-class LitleMonster extends Character {
+class LittleMonster extends Character {
     constructor () {
         super('Necrófago');
         this.life = 40;
@@ -56,5 +56,24 @@ class BigMonster extends Character {
         this.attack = 15;
         this.defense = 7;
         this.maxLife = this.life;
+    }
+}
+
+
+class Stage {
+    constructor(fighterOne, fighterTwo, fighterOneEl, fighterTwoEl) {
+        this.fighterOne = fighterOne;
+        this.fighterTwo = fighterTwo;
+        this.fighterOneEl = fighterOneEl;
+        this.fighterTwoEl = fighterTwoEl;
+    }
+
+    start() {
+        this.update();
+    }
+
+    update() {
+        this.fighterOneEl.querySelector('.name').innerHTML = this.fighterOne.name;
+        this.fighterTwoEl.querySelector('.name').innerHTML = this.fighterTwo.name;
     }
 }

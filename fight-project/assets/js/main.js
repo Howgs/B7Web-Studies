@@ -1,5 +1,12 @@
 
-let char = new LitleMonster()
-console.log(char.name)
-console.log(char.life)
-console.log(char.defense)
+let char = new Knight("Howgs")
+let monster = new LittleMonster();
+
+const stage = new Stage(
+    char,
+    monster,
+    document.querySelector('#char'),
+    document.querySelector('#monster')
+);
+
+stage.start();
