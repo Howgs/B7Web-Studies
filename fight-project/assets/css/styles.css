@@ -19,6 +19,12 @@
     background-color: red;
     border-radius: 5px;
     width: 10%;
+    
+}
+
+.name {
+    display: block;
+    margin: 3px;
 }
 
 .log {
