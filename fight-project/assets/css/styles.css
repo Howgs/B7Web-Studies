@@ -1,34 +1,33 @@
 .fightarea {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
-#char, #monster {
-    flex: 1;
+#char,
+#monster {
+  flex: 1;
 }
 
 .lifebar {
-    height: 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
+  height: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
-
 .lifebar .bar {
-    height: inherit;
-    background-color: red;
-    border-radius: 5px;
-    width: 10%;
-    
+  height: inherit;
+  background-color: red;
+  border-radius: 5px;
+  width: 10%;
 }
 
 .name {
-    display: block;
-    margin: 3px;
+  display: block;
+  margin: 3px;
 }
 
 .log {
-    border: 1px dotted #999;
-    height: 200px;
-    overflow-y: scroll;
+  border: 1px dotted #999;
+  height: 200px;
+  overflow-y: scroll;
 }
