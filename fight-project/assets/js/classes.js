@@ -58,11 +58,12 @@ class BigMonster extends Character {
 }
 
 class Stage {
-  constructor(fighterOne, fighterTwo, fighterOneEl, fighterTwoEl) {
+  constructor(fighterOne, fighterTwo, fighterOneEl, fighterTwoEl, logObject) {
     this.fighterOne = fighterOne;
     this.fighterTwo = fighterTwo;
     this.fighterOneEl = fighterOneEl;
     this.fighterTwoEl = fighterTwoEl;
+    this.log = logObject;
   }
 
   start() {
@@ -90,10 +91,10 @@ class Stage {
 
   doAttack(attacking, attacked) {
     if (attacking.life > 0 && attacked.life <= 0) {
-      console.log("inimigo morto");
+      this.log.addMessage("inimigo morto");
       return;
     } else if (attacking.life <= 0 && attacked.life >= 0) {
-      console.log("Fighter está fora de combate");
+      this.log.addMessage("Fighter está fora de combate");
       return;
     }
 
@@ -105,11 +106,32 @@ class Stage {
 
     if (actualAttack > actualDefense) {
       attacked.life -= actualAttack;
-      console.log(`${attacking.name} acertou ${attacked.name}, DANO = ${actualAttack}`);
+      this.log.addMessage(`${attacking.name} acertou ${attacked.name}, DANO = ${actualAttack}`);
     } else {
-      console.log(`${attacked.name} defendeu o ataque de ${attacking.name}`);
+      this.log.addMessage(`${attacked.name} defendeu o ataque de ${attacking.name}`);
     }
 
     this.update();
+  }
+}
+
+class Log {
+  list = [];
+
+  constructor(listEl) {
+    this.listEl = listEl;
+  }
+
+  addMessage(msg) {
+    this.list.push(msg);
+    this.render();
+  }
+
+  render() {
+    this.listEl.innerHTML = "";
+
+    for (let i in this.list) {
+      this.listEl.innerHTML += `<li>${this.list[i]}</li>`;
+    }
   }
 }
